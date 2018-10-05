@@ -5,7 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".signUpActivity">
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/signUpTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textSize="36sp" />
 
     <EditText
         android:id="@+id/username"
@@ -40,8 +48,9 @@
         android:inputType="textPhonetic" />
 
     <Button
-        android:id="@+id/Sign Up"
+        android:id="@+id/btSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+
+        android:text="Sign Up" />
 </LinearLayout>

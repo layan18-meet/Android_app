@@ -6,18 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class signUpActivity extends AppCompatActivity implements View.OnClickListener {
+public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText username, password, email, phone_number;
     Button signUp;
+    TextView signUpTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        signUpTV= (TextView) findViewById(R.id.signUpTV);
         username= (EditText) findViewById(R.id.username);
         password= (EditText) findViewById(R.id.password);
         email= (EditText) findViewById(R.id.email);
@@ -29,7 +32,6 @@ public class signUpActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     String getEmail = email.getText().toString();
-
 
 
     @Override
@@ -47,7 +49,7 @@ public class signUpActivity extends AppCompatActivity implements View.OnClickLis
             }
 
             else {
-                Intent i = new Intent(this, homeActivity.class);
+                Intent i = new Intent(this, ThirdPageActivity.class);
                 startActivity(i);
             }
 

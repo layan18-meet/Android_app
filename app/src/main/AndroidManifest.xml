@@ -9,15 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".alertDialogActivity">
+        <activity android:name=".AlertDialogActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".homeActivity" />
-        <activity android:name=".signUpActivity"></activity>
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".TripListActivity" />
+        <activity android:name=".ThirdPageActivity" />
+        <activity android:name=".PlanTripActivity" />
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".PlanDayActivity"></activity>
     </application>
 
 </manifest>
