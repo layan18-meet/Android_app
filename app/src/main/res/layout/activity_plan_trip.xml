@@ -7,6 +7,22 @@
     tools:context=".PlanTripActivity">
 
 
+    <EditText
+        android:id="@+id/tripNameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Trip Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/tripDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Trip Description"
+        android:inputType="textPersonName" />
+
     <ListView
         android:id="@+id/daysLV"
         android:layout_width="match_parent"
@@ -23,5 +39,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Pin to Map" />
+
+    <Button
+        android:id="@+id/saveTripButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save Trip" />
 
 </LinearLayout>

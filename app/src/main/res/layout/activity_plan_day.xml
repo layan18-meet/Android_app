@@ -11,16 +11,16 @@
         android:id="@+id/countryButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Country" />
 
     <Button
         android:id="@+id/citiesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="cities" />
 
     <EditText
-        android:id="@+id/description"
+        android:id="@+id/descriptionDay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

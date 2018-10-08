@@ -11,25 +11,25 @@ import java.util.ArrayList;
 
 public class TripListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    ArrayList<String> arrayList= new ArrayList<>();
-    ListView lvCountries;
+    ArrayList<String> tripList= new ArrayList<>();
+    ListView lvTrips;
     ArrayAdapter<String> arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_trip_list);
 
-        lvCountries= (ListView) findViewById(R.id.lvCountries);
+        lvTrips= (ListView) findViewById(R.id.lvTrips);
 
 
-        arrayAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayList);
-        lvCountries.setAdapter(arrayAdapter);
+        arrayAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tripList);
+        lvTrips.setAdapter(arrayAdapter);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        String selectedItem= arrayList.get(position);
+        String selectedItem= tripList.get(position);
         if (selectedItem=="Germany") {
 
         }

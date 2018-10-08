@@ -4,25 +4,28 @@ import java.util.ArrayList;
 
 public class Trip {
 
-    public String country;
-    public ArrayList<TripDay> day;
+    public String[] countries;
+    public ArrayList<TripDay> days;
     public String description;
     public int pin;
 
-    public Trip(String country, String description, int pin){
-        country= this.country;
+    public Trip(String[] countries, String description, int pin){
         description= this.description;
         pin= this.pin;
-        day = new ArrayList<>();
+        days = new ArrayList<>();
+
     }
 
-    public void setCountry(String countryName) {
-        country = countryName;
+
+    public void addCountry(String CountryName) {
+
     }
+
 
     public void addDay(TripDay tripDay){
-        day.add(tripDay);
+        days.add(tripDay);
     }
+
     public void addCity(String cityName) {
        /* int currentSize = TripDay.length;
         int newSize = currentSize + 1;
