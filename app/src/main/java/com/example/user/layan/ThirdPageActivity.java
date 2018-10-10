@@ -19,6 +19,9 @@ public class ThirdPageActivity extends AppCompatActivity implements View.OnClick
 
         plannedTripsButton = (Button) findViewById(R.id.plannedTripsButton);
         planNewTripButton = (Button) findViewById(R.id.planNewTripButton);
+
+        plannedTripsButton.setOnClickListener(this);
+        planNewTripButton.setOnClickListener(this);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

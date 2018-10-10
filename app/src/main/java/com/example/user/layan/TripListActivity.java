@@ -22,6 +22,7 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
 
         lvTrips= (ListView) findViewById(R.id.lvTrips);
 
+        lvTrips.setOnItemClickListener(this);
 
         arrayAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, tripList);
         lvTrips.setAdapter(arrayAdapter);

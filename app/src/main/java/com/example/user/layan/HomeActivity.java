@@ -20,7 +20,8 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
 
         goToSignInButton = (Button) findViewById(R.id.goToSignInButton);
         goToSignUpButton = (Button) findViewById(R.id.goToSignUpButton);
-
+        goToSignInButton.setOnClickListener(this);
+        goToSignUpButton.setOnClickListener(this);
     }
 
 

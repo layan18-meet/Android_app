@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class PlanTripActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     Button addTripButton, saveTripButton;
-    Switch addPinSwitch;
     EditText tripNameET, tripDescription;
     ListView daysLV;
     ArrayList<TripDay> dayArrayList= new ArrayList<>();
@@ -30,9 +29,12 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
         addTripButton= (Button) findViewById(R.id.addTripButton);
         saveTripButton= (Button) findViewById(R.id.saveTripButton);
         tripDescription=(EditText) findViewById(R.id.tripDescription);
-        addPinSwitch= (Switch)findViewById(R.id.addPinSwitch);
         daysLV= (ListView) findViewById(R.id.daysLV);
         tripNameET= (EditText) findViewById(R.id.tripNameET);
+
+        addTripButton.setOnClickListener(this);
+        saveTripButton.setOnClickListener(this);
+        daysLV.setOnItemClickListener(this);
 
         dayArrayAdapter= new ArrayAdapter<TripDay>(this, android.R.layout.simple_list_item_1, dayArrayList);
         daysLV.setAdapter(dayArrayAdapter);

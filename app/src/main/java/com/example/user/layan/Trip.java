@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Trip {
 
     public String[] countries;
+    public int tripId;
     public ArrayList<TripDay> days;
     public String description;
     public int pin;

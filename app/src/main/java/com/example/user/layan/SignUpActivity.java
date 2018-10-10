@@ -25,6 +25,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         password= (EditText) findViewById(R.id.password);
         email= (EditText) findViewById(R.id.email);
         phone_number= (EditText) findViewById(R.id.phone_number);
+
+
     }
 
     boolean isEmailValid(CharSequence email) {

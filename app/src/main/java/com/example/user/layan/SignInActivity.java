@@ -23,6 +23,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         username2 = (EditText) findViewById(R.id.username2);
         login = (Button) findViewById(R.id.login);
         loginTV= (TextView) findViewById(R.id.loginTV);
+
+        login.setOnClickListener(this);
     }
 
     @Override

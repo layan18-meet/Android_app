@@ -27,4 +27,10 @@
         android:inputType="textPersonName"
         android:text="Name" />
 
+    <Button
+        android:id="@+id/addPinButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Pin to Map" />
+
 </LinearLayout>

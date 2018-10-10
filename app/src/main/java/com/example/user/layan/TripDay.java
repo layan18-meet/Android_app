@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class TripDay {
     public String country;
+    public int tripId;
     public ArrayList<String> cities;
     public String description;
 
