@@ -39,8 +39,8 @@ public class PlanDayActivity extends AppCompatActivity implements View.OnClickLi
         builder.setTitle("Choose a country");
 
         // add a radio button list
-        String[] countries = {"Italy", "Spain", "France", "Portugal", "Greece", "United States", "China", "Turkey", "Germany", "South Africa", "Thailand"};
-        int checkedItem = 1; // Italy
+        String[] countries = {"flag", "Spain", "France", "Portugal", "Greece", "United States", "China", "Turkey", "Germany", "South Africa", "Thailand"};
+        int checkedItem = 1; // flag
         builder.setSingleChoiceItems(countries, checkedItem, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

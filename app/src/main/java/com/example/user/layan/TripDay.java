@@ -3,20 +3,28 @@ package com.example.user.layan;
 import java.util.ArrayList;
 
 public class TripDay {
-    public String country;
-    public int tripId;
-    public ArrayList<String> cities;
-    public String description;
+    private String country;
+    private int image;
+    private int tripId;
+    private ArrayList<String> cities;
+    private String description;
 
 
-    public TripDay(String country, String city, String description) {
+    public TripDay(String country, String city, String description,int image) {
         country= this.country;
+        image= this.image;
         description= this.description;
         cities= new ArrayList<String>();
+
     }
 
     public String getCountry() {
         return country;
+    }
+
+    public int getImage() {
+
+        return image;
     }
 
     public void setCountry(String country) {
@@ -37,6 +45,10 @@ public class TripDay {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setImage(int image) {
+        this.image=image;
     }
 
 }

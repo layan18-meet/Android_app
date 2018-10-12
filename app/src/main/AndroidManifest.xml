@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlanDayActivity">
+        <activity android:name=".PlanTripActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,7 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".TripListActivity" />
         <activity android:name=".ThirdPageActivity" />
-        <activity android:name=".PlanTripActivity" />
+        <activity android:name=".PlanDayActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".AlertDialogActivity"></activity>
     </application>

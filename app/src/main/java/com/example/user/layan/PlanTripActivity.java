@@ -9,17 +9,16 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Switch;
 
 import java.util.ArrayList;
 
 public class PlanTripActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     Button addTripButton, saveTripButton;
-    EditText tripNameET, tripDescription;
+    EditText tripDescription;
     ListView daysLV;
-    ArrayList<TripDay> dayArrayList= new ArrayList<>();
-    ArrayAdapter<TripDay> dayArrayAdapter;
+    ArrayList<TripDay> days;
+    Custom_adapter dayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +29,21 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
         saveTripButton= (Button) findViewById(R.id.saveTripButton);
         tripDescription=(EditText) findViewById(R.id.tripDescription);
         daysLV= (ListView) findViewById(R.id.daysLV);
-        tripNameET= (EditText) findViewById(R.id.tripNameET);
+
+        days= new ArrayList<>();
+
+        days.add(new TripDay("country", "city", "day1", R.drawable.flag));
+        days.add(new TripDay("country", "city", "day2", R.drawable.flag));
+        days.add(new TripDay("country", "city", "day3", R.drawable.flag));
+        days.add(new TripDay("country", "city", "day4", R.drawable.flag));
 
         addTripButton.setOnClickListener(this);
         saveTripButton.setOnClickListener(this);
+
+        dayAdapter= (Custom_adapter) new Custom_adapter(this, R.layout.custom_row, days);
+        daysLV.setAdapter(dayAdapter);
         daysLV.setOnItemClickListener(this);
 
-        dayArrayAdapter= new ArrayAdapter<TripDay>(this, android.R.layout.simple_list_item_1, dayArrayList);
-        daysLV.setAdapter(dayArrayAdapter);
     }
 
     @Override
