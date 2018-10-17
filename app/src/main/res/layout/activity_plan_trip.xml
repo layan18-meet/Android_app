@@ -23,24 +23,18 @@
         android:hint="Trip Description"
         android:inputType="textPersonName" />
 
-    <ListView
-        android:id="@+id/daysLV"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/background_light"
-        android:cacheColorHint="@android:color/background_light" />
-
     <Button
         android:id="@+id/addTripButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add Day to Trip" />
 
-    <Switch
-        android:id="@+id/addPinSwitch"
+    <ListView
+        android:id="@+id/daysLV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Add Pin to Map" />
+        android:layout_height="355dp"
+        android:background="@android:color/background_light"
+        android:cacheColorHint="@android:color/background_light" />
 
     <Button
         android:id="@+id/saveTripButton"

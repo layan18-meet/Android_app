@@ -29,9 +29,9 @@ public class Custom_adapter extends ArrayAdapter<TripDay> {
         TripDay p= getItem(position);
 
       //  if( p!=null ) {
-            TextView tvName= (TextView) v.findViewById(R.id.tripDayNameTV);
+        /*    TextView tvName= (TextView) v.findViewById(R.id.tripDayNameTV);
             tvName.setText(p.getCountry());
-
+*/
             ImageView imageView= (ImageView)v.findViewById(R.id.imageView);
             imageView.setImageResource(p.getImage());
     //    }

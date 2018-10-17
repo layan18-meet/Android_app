@@ -35,7 +35,7 @@ public class Custom_adapter2 extends ArrayAdapter<Trip> {
         TextView tvDes= (TextView) v.findViewById(R.id.desTripTV);
         tvName.setText(p.getName());
 
-        
+
         //    }
         return v;
     }
