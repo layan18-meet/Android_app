@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "651025076400",
+    "firebase_url": "https://layan-e2f8f.firebaseio.com",
+    "project_id": "layan-e2f8f",
+    "storage_bucket": "layan-e2f8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651025076400:android:11e64fc8144ab098",
+        "android_client_info": {
+          "package_name": "com.example.user.layan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651025076400-3r64nsghgrfaglv4ghl9bpfnpgdcvif2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI2gtetRc3IZL-81vZidKaNjD4nKY62cM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

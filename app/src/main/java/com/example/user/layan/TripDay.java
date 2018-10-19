@@ -3,17 +3,18 @@ package com.example.user.layan;
 import java.util.ArrayList;
 
 public class TripDay {
+
     private String country;
     private int image;
-    private int tripId;
+    private int tripDayId;
     private ArrayList<String> cities;
     private String description;
 
 
     public TripDay(String country, String city, String description,int image) {
-        country= this.country;
-        image= this.image;
-        description= this.description;
+        this.country=country;
+        this.image=image;
+        this.description=description;
         cities= new ArrayList<String>();
 
     }

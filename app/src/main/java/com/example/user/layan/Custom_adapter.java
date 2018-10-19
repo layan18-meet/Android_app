@@ -12,28 +12,28 @@ import android.widget.TextView;
 import java.util.List;
 
 public class Custom_adapter extends ArrayAdapter<TripDay> {
-    private int resourceLyaout;
-    private Context aContext;
+    private int resource;
+    private Context context;
 
     public Custom_adapter(@NonNull Context context, int resource, @NonNull List<TripDay> objects) {
         super(context, resource, objects);
-        this.resourceLyaout= resource;
-        this.aContext= context;
+        this.resource= resource;
+        this.context= context;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v= convertView;
         if (v== null)
-            v= LayoutInflater.from(aContext).inflate(resourceLyaout, parent,  false);
+            v= LayoutInflater.from(context).inflate(resource, parent,  false);
         TripDay p= getItem(position);
 
       //  if( p!=null ) {
-        /*    TextView tvName= (TextView) v.findViewById(R.id.tripDayNameTV);
+            TextView tvName= (TextView) v.findViewById(R.id.tripDayNumTV);
             tvName.setText(p.getCountry());
-*/
+
             ImageView imageView= (ImageView)v.findViewById(R.id.imageView);
-            imageView.setImageResource(p.getImage());
+       //     imageView.setImageResource(p.getImage());
     //    }
         return v;
     }

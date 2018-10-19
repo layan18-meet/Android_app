@@ -16,34 +16,35 @@ import java.util.ArrayList;
 public class PlanTripActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     Button addTripButton, saveTripButton;
-    EditText tripDescription;
+    EditText tripDescription, tripNameET;
     ListView daysLV;
     ArrayList<TripDay> days;
-    Custom_adapter dayAdapter;
+    CustomAdapter dayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_trip);
 
-       /* addTripButton= (Button) findViewById(R.id.addTripButton);
+        addTripButton= (Button) findViewById(R.id.addTripButton);
         saveTripButton= (Button) findViewById(R.id.saveTripButton);
-        tripDescription=(EditText) findViewById(R.id.tripDescription);*/
+        tripDescription=(EditText) findViewById(R.id.tripDescription);
+        tripNameET= (EditText) findViewById(R.id.tripNameET);
         daysLV= (ListView) findViewById(R.id.daysLV);
 
         days= new ArrayList<>();
 
-        days.add(new TripDay("country", "city", "day1", R.drawable.ic_launcher));
+        days.add(new TripDay("country", "city", "day1", R.drawable.flag));
         days.add(new TripDay("country", "city", "day2", R.drawable.flag));
         days.add(new TripDay("country", "city", "day3", R.drawable.flag));
         days.add(new TripDay("country", "city", "day4", R.drawable.flag));
 
-/*
+
         addTripButton.setOnClickListener(this);
         saveTripButton.setOnClickListener(this);
-*/
 
-        dayAdapter= new Custom_adapter(this, R.layout.custom_row, days);
+
+        dayAdapter= new CustomAdapter(this, R.layout.custom_row, days);
         daysLV.setAdapter(dayAdapter);
         daysLV.setOnItemClickListener(this);
       //  daysLV.setBackgroundColor(Color.BLUE);
@@ -57,7 +58,8 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
             startActivity(i);
         }
         else if(v==saveTripButton){
-
+            Intent i = new Intent(this, ThirdPageActivity.class);
+            startActivity(i);
         }
     }
 

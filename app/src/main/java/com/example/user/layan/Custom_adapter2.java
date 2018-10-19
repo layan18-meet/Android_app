@@ -12,12 +12,12 @@ import android.widget.TextView;
 import java.util.List;
 
 public class Custom_adapter2 extends ArrayAdapter<Trip> {
-    private int resourceLyaout;
+    private int resourceLayout;
     private Context aContext;
 
     public Custom_adapter2(@NonNull Context context, int resource, @NonNull List<Trip> objects) {
         super(context, resource, objects);
-        this.resourceLyaout= resource;
+        this.resourceLayout= resource;
         this.aContext= context;
     }
 
@@ -25,17 +25,18 @@ public class Custom_adapter2 extends ArrayAdapter<Trip> {
     public View getView(int position, View convertView, ViewGroup parent) {
         View v= convertView;
         if (v== null)
-            v= LayoutInflater.from(aContext).inflate(resourceLyaout, parent,  false);
+            v= LayoutInflater.from(aContext).inflate(resourceLayout, parent,  false);
         Trip p= getItem(position);
 
         //  if( p!=null ) {
-        TextView tvName= (TextView) v.findViewById(R.id.titleTripTV);
+        TextView tvName= (TextView) v.findViewById(R.id.tripNameTV);
         tvName.setText(p.getName());
 
-        TextView tvDes= (TextView) v.findViewById(R.id.desTripTV);
-        tvName.setText(p.getName());
+        TextView tvCountries= (TextView) v.findViewById(R.id.countriesTV);
+        tvCountries.setText(p.getCountries());
 
-
+        ImageView imageView2= (ImageView)v.findViewById(R.id.imageView2);
+        
         //    }
         return v;
     }

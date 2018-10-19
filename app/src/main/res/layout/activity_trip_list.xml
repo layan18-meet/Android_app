@@ -7,8 +7,15 @@
     android:orientation="vertical"
     tools:context=".TripListActivity">
 
+    <TextView
+        android:id="@+id/tripListTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your Trip List"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
+
     <ListView
-        android:id="@+id/lvTrips"
+        android:id="@+id/tripsLV"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
