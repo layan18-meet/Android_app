@@ -1,7 +1,9 @@
 package com.example.user.layan;
 
 import android.content.Context;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ public class Custom_adapter2 extends ArrayAdapter<Trip> {
         this.aContext= context;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v= convertView;
@@ -33,8 +36,7 @@ public class Custom_adapter2 extends ArrayAdapter<Trip> {
         tvName.setText(p.getName());
 
         TextView tvCountries= (TextView) v.findViewById(R.id.countriesTV);
-        tvCountries.setText(p.getCountries());
-
+        tvCountries.setText(String.join(",", p.getCountries()));
         ImageView imageView2= (ImageView)v.findViewById(R.id.imageView2);
         
         //    }

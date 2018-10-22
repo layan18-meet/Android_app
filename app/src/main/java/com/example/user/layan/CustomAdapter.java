@@ -46,7 +46,7 @@ public class CustomAdapter extends ArrayAdapter{
 
             //getting the view elements of the list from the view
             ImageView imageView = view.findViewById(R.id.imageView);
-            TextView textViewName = view.findViewById(R.id.tripDayNameTV);
+            TextView textViewName = view.findViewById(R.id.tripDayNumTV);
 
             //getting the hero of the specified position
             TripDay tripDay = tripDayList.get(position);

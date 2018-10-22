@@ -12,19 +12,24 @@ public class Trip {
     private String description;
     private int pin;
 
-    public Trip(String name, List<String> countries){
+    public Trip(String name, int tripId, String description, int pin){
+        countries = this.getCountries();
+        days= new ArrayList<>();
         this.name= name;
-        days = new ArrayList<>();
+        this.tripId= tripId;
+        this.description=description;
+        this.pin= pin;
     }
 
-
-    public CharSequence getCountries() {
+    public ArrayList<String> getCountries() {
+        ArrayList countries= new ArrayList<String>();
+        for (int i =0; i<days.size(); i++) {
+            countries.add(days.get(i).getCountry());
+        }
         return countries;
     }
 
-    public void setCountries(List<String> countries) {
-        this.countries = countries;
-    }
+
 
     public String getName() {
         return name;

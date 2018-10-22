@@ -52,4 +52,5 @@ public class TripDay {
         this.image=image;
     }
 
+
 }
