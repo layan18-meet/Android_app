@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TripListActivity">
+        <activity android:name=".CameraGalleryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,15 @@
         <activity android:name=".PlanTripActivity" />
         <activity android:name=".PlanDayActivity" />
         <activity android:name=".SignInActivity" />
-        <activity android:name=".AlertDialogActivity"></activity>
+        <activity android:name=".AlertDialogActivity" />
+        <activity android:name=".TripListActivity" />
+        <activity android:name=".SearchableActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource=".@xml/activity_searchable"/>
+        </activity>
     </application>
 
 </manifest>
