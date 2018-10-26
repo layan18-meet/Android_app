@@ -32,11 +32,11 @@ public class CameraGalleryActivity extends AppCompatActivity implements View.OnC
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         //if the request was from the camera and the result was OK meaning the camera worked
-        if(requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
+//        if(requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             //the image capturedissaved in the data object
             Bitmap photo= (Bitmap) data.getExtras().get("data");
             imageViewCamera.setImageBitmap(photo);
-        }
+//        }
     }
 
     @Override

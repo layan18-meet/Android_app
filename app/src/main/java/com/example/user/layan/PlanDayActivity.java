@@ -32,7 +32,7 @@ public class PlanDayActivity extends AppCompatActivity implements View.OnClickLi
     }
 
 
-    public void showAlertDialogButtonClicked(View view) {
+    public void showCountryAlertDialogButtonClicked(View view) {
 
         // setup the alert builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -62,6 +62,36 @@ public class PlanDayActivity extends AppCompatActivity implements View.OnClickLi
         dialog.show();
     }
 
+    public void showCityAlertDialogButtonClicked(View view) {
+
+        // setup the alert builder
+        AlertDialog.Builder builder2 = new AlertDialog.Builder(this);
+        builder2.setTitle("Choose a city");
+
+        // add a radio button list
+        String[] cities = {"Paris", "London", "Berlin", "Tokyo", "Oslo", "Madrid", "Rome", "Jericho"};
+        int checkedItem = 1; // flag
+        builder2.setSingleChoiceItems(cities, checkedItem, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // user checked an item
+            }
+        });
+
+        // add OK and Cancel buttons
+        builder2.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // user clicked OK
+            }
+        });
+        builder2.setNegativeButton("Cancel", null);
+
+        // create and show the alert dialog
+        AlertDialog dialog2 = builder2.create();
+        dialog2.show();
+    }
+
     @Override
     public void onClick(View v) {
         if(v==addPinButton) {
@@ -69,7 +99,10 @@ public class PlanDayActivity extends AppCompatActivity implements View.OnClickLi
             startActivity(i);
         }
         if(v==countryButton){
-            showAlertDialogButtonClicked(v);
+            showCountryAlertDialogButtonClicked(v);
+        }
+        if(v==citiesButton){
+            showCityAlertDialogButtonClicked(v);
         }
 
     }
