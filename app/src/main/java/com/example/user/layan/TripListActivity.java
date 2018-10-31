@@ -34,6 +34,8 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
         trips.add(new Trip("my fav trip", 1, "was amazing", 3));
         trips.add(new Trip("my worst trip", 1, "not so good", 5));
 
+        trips.get(0).setCountries();
+
 
         tripAdapter= new CustomAdapter2(this, R.layout.custom_row2, trips);
         tripsLV.setAdapter(tripAdapter);

@@ -13,19 +13,26 @@ public class Trip {
     private int pin;
 
     public Trip(String name, int tripId, String description, int pin){
-        countries = this.getCountries();
-        days= new ArrayList<>();
+        this.countries = new ArrayList<String>();
+        this.days= new ArrayList<TripDay>();
         this.name= name;
         this.tripId= tripId;
         this.description=description;
         this.pin= pin;
     }
 
-    public ArrayList<String> getCountries() {
-        ArrayList countries= new ArrayList<String>();
+    public void setCountries() {
+        days.add(new TripDay("France", "Paris", "wow", 1));
+        days.add(new TripDay("England", "London", "eh", 8374));
         for (int i =0; i<days.size(); i++) {
             countries.add(days.get(i).getCountry());
         }
+        //return countries;
+    }
+
+    public List<String> getCountries() {
+        countries.add("France");
+        countries.add("England");
         return countries;
     }
 

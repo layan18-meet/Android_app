@@ -1,12 +1,16 @@
 package com.example.user.layan;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import com.mousebird.maply.GlobeMapFragment;
+import com.mousebird.maply.QuadImageTileLayer;
+import com.mousebird.maply.RemoteTileInfo;
+import com.mousebird.maply.RemoteTileSource;
+import com.mousebird.maply.SphericalMercatorCoordSystem;
+
+import java.io.File;
 
 
 public class HelloGlobeFragment extends GlobeMapFragment {
