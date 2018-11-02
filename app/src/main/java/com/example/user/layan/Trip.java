@@ -1,9 +1,10 @@
 package com.example.user.layan;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Trip {
+public class Trip implements Serializable{
 
     private List<String> countries;
     private String name;

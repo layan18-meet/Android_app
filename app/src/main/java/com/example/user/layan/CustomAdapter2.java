@@ -51,7 +51,7 @@ public class CustomAdapter2 extends ArrayAdapter {
         Trip trip = tripList.get(position);
 
         //adding values to the list item
-        imageView.setImageResource(R.drawable.flag);
+        //imageView.setImageResource(R.drawable.flag);
         textViewName.setText(trip.getName());
 
         //finally returning the view

@@ -1,5 +1,6 @@
 package com.example.user.layan;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,13 +37,23 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
 
         trips.get(0).setCountries();
 
-
+        tripsLV.setOnItemClickListener(this);
         tripAdapter= new CustomAdapter2(this, R.layout.custom_row2, trips);
         tripsLV.setAdapter(tripAdapter);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //----------------------------------------------------THE ERROR IS HERE!!!!!!!!!!!!!!!!!----------------------------------------------------------------------------
+//        Intent i= new Intent(this, TripDesActivity.class);
+//        i.putExtra("trip", trips.get(position));
+//        startActivity(i);
+        //----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
         //String selectedItem= trips.get(position);
         //if (selectedItem=="Germany") {
 
