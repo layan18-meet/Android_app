@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ThirdPageActivity">
+        <activity android:name=".FireActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +24,8 @@
         <activity android:name=".SignInActivity" />
         <activity android:name=".AlertDialogActivity" />
         <activity android:name=".TripListActivity" />
-        <activity android:name=".TripDesActivity"></activity>
+        <activity android:name=".TripDesActivity" />
+        <activity android:name=".ThirdPageActivity"></activity>
     </application>
 
 </manifest>

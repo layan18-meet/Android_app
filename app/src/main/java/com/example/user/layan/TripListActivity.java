@@ -44,19 +44,18 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+
         //----------------------------------------------------THE ERROR IS HERE!!!!!!!!!!!!!!!!!----------------------------------------------------------------------------
-//        Intent i= new Intent(this, TripDesActivity.class);
-//        i.putExtra("trip", trips.get(position));
-//        startActivity(i);
+        //Intent i= new Intent(this, TripDesActivity.class);
+        //i.putExtra("trip", trips.get(position));
+        //startActivity(i);
         //----------------------------------------------------------------------------------------------------------------------------
-
-
-
 
 
         //String selectedItem= trips.get(position);
         //if (selectedItem=="Germany") {
 
-        //}
     }
-}
+    }
+
