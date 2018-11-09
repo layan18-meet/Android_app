@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 
@@ -30,7 +32,7 @@ public class FireActivity extends AppCompatActivity {
     TextView tvName, tvProfession;
     EditText etName, etPass;
     ListView lvUsers;
-    ArrayList<String> users;
+    ArrayList<Map> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +46,7 @@ public class FireActivity extends AppCompatActivity {
         etPass= (EditText) findViewById(R.id.etPass);
         lvUsers= (ListView)findViewById(R.id.lvUsers);
 
-        users= new ArrayList<String>();
+        users= new ArrayList<Map>();
         final ArrayAdapter adapter;
         adapter= new ArrayAdapter(this, android.R.layout.simple_list_item_1,users);
         lvUsers.setAdapter(adapter);
@@ -81,9 +83,16 @@ public class FireActivity extends AppCompatActivity {
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                String name= dataSnapshot.getValue(String.class);
-                users.add(name);
-                adapter.notifyDataSetChanged();
+                Map<String, String> map= (Map<String, String>) dataSnapshot.getValue();
+                Log.v("E_VALUE", "DATA: "+ dataSnapshot.getValue());
+
+                String country= map.get("country");
+                String cities= map.get("cities");
+                String image= map.get("image");
+                String tripDayId= map.get("tripDayId");
+
+//                users.add();
+//                adapter.notifyDataSetChanged();
             }
 
             @Override

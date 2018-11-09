@@ -2,8 +2,11 @@ package com.example.user.layan;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,15 +14,23 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
+import java.util.Map;
 
 public class PlanTripActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     Button addTripButton, saveTripButton;
     EditText tripDescription, tripNameET;
     ListView daysLV;
-    ArrayList<TripDay> days;
+    ArrayList<TripDay> days = new ArrayList<>();
     CustomAdapter dayAdapter;
+    ArrayList<Map> users;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +43,18 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
         tripNameET= (EditText) findViewById(R.id.tripNameET);
         daysLV= (ListView) findViewById(R.id.daysLV);
 
-        days= new ArrayList<>();
+        final FirebaseDatabase database= FirebaseDatabase.getInstance();
+        final DatabaseReference myRef= database.getReference("Users");
 
-        days.add(new TripDay("country", "city", "day1", R.drawable.flag));
-        days.add(new TripDay("country", "city", "day2", R.drawable.flag));
-        days.add(new TripDay("country", "city", "day3", R.drawable.flag));
-        days.add(new TripDay("country", "city", "day4", R.drawable.flag));
+        users= new ArrayList<Map>();
+/*        final ArrayAdapter adapter;
+        adapter= new ArrayAdapter(this, android.R.layout.simple_list_item_1,users);
+        daysLV.setAdapter(adapter);*/
+
+//        days.add(new TripDay("country", "city", "day1", R.drawable.flag));
+//        days.add(new TripDay("country", "city", "day2", R.drawable.flag));
+//        days.add(new TripDay("country", "city", "day3", R.drawable.flag));
+//        days.add(new TripDay("country", "city", "day4", R.drawable.flag));
 
 
         addTripButton.setOnClickListener(this);
@@ -47,8 +64,42 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
         dayAdapter= new CustomAdapter(this, R.layout.custom_row, days);
         daysLV.setAdapter(dayAdapter);
         daysLV.setOnItemClickListener(this);
-      //  daysLV.setBackgroundColor(Color.BLUE);
+        //  daysLV.setBackgroundColor(Color.BLUE);
 
+
+        myRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Map<String, String> map= (Map<String, String>) dataSnapshot.getValue();
+                Log.v("E_VALUE", "DATA: "+ dataSnapshot.getValue());
+
+                String country= map.get("country");
+                String cities= map.get("cities");
+                String image= map.get("image");
+                String tripDayId= map.get("tripDayId");
+                String description= map.get("description");
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override

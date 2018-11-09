@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FireActivity">
+        <activity android:name=".TripDesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PlanDayActivity" />
+        <activity android:name=".FireActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".PlanTripActivity" />
@@ -24,7 +24,7 @@
         <activity android:name=".SignInActivity" />
         <activity android:name=".AlertDialogActivity" />
         <activity android:name=".TripListActivity" />
-        <activity android:name=".TripDesActivity" />
+        <activity android:name=".PlanDayActivity" />
         <activity android:name=".ThirdPageActivity"></activity>
     </application>
 

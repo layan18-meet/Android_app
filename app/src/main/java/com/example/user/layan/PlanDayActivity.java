@@ -10,6 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class PlanDayActivity extends AppCompatActivity implements View.OnClickListener, DialogInterface.OnClickListener {
     Button countryButton, citiesButton, addPinButton;
     EditText descriptionDay;
@@ -96,6 +99,10 @@ public class PlanDayActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         if(v==addPinButton) {
             Intent i = new Intent(this, PlanTripActivity.class);
+            TripDay tripDay = new TripDay("country", "city", "day1", R.drawable.flag);
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference reference = database.getReference("Users");
+            reference.child("Trip").child("days").push().setValue(tripDay);
             startActivity(i);
         }
         if(v==countryButton){
