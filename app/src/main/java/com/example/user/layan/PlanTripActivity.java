@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,6 +33,8 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
     ArrayList<TripDay> days = new ArrayList<>();
     CustomAdapter dayAdapter;
     ArrayList<Map> users;
+    private FirebaseAuth mAuth;
+    FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,9 +107,21 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        currentUser = mAuth.getCurrentUser();
+         //updateUI(currentUser);
+    }
+
+    @Override
     public void onClick(View v) {
         if( v==addTripButton ){
+
             Intent i = new Intent(this, PlanDayActivity.class);
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference reference = database.getReference("Users");
+            reference.child(currentUser.getUid()).child("Trips");
             startActivity(i);
         }
         else if(v==saveTripButton){

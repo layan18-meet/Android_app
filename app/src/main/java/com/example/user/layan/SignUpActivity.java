@@ -9,11 +9,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText username, password, email, phone_number;
     Button signUp;
+    final String TAG="Firebase";
     TextView signUpTV;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,18 +31,18 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         phone_number= (EditText) findViewById(R.id.phone_number);
 
 
+
     }
 
     boolean isEmailValid(CharSequence email) {
         return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-    String getEmail = email.getText().toString();
-
-
     @Override
     public void onClick(View v) {
         if ( v==signUp ) {
+            String getEmail = email.getText().toString();
+
             if ((username.equals("") || password==null || email.equals("") || phone_number==null) || (!isEmailValid(getEmail))) {
 
                 //Check if one or more fields are empty
@@ -58,3 +62,5 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 }
+
+
