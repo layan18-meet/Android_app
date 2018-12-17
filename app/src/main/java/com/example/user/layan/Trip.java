@@ -8,18 +8,18 @@ public class Trip implements Serializable{
 
     private List<String> countries;
     private String name;
-    private int tripId;
+    private String tripId;
     private ArrayList<TripDay> days;
     private String description;
     private int pin;
 
-    public Trip(String name, int tripId, String description, int pin){
-        this.countries = new ArrayList<String>();
+    public Trip(String name, String description ){
+     //   this.countries = new ArrayList<String>();
         this.days= new ArrayList<TripDay>();
         this.name= name;
-        this.tripId= tripId;
+      //  this.tripId= tripId;
         this.description=description;
-        this.pin= pin;
+     //   this.pin= pin;
     }
 
     public void setCountries() {
@@ -47,11 +47,11 @@ public class Trip implements Serializable{
         this.name = name;
     }
 
-    public int getTripId() {
+    public String getTripId() {
         return tripId;
     }
 
-    public void setTripId(int tripId) {
+    public void setTripId(String tripId) {
         this.tripId = tripId;
     }
 

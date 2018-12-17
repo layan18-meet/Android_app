@@ -41,6 +41,9 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_trip);
 
+        mAuth = FirebaseAuth.getInstance();
+
+
         addTripButton= (Button) findViewById(R.id.addTripButton);
         saveTripButton= (Button) findViewById(R.id.saveTripButton);
         tripDescription=(EditText) findViewById(R.id.tripDescription);
@@ -111,23 +114,28 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         currentUser = mAuth.getCurrentUser();
-         //updateUI(currentUser);
+        //updateUI(currentUser);
     }
 
     @Override
     public void onClick(View v) {
-        if( v==addTripButton ){
-
-            Intent i = new Intent(this, PlanDayActivity.class);
-            FirebaseDatabase database = FirebaseDatabase.getInstance();
-            DatabaseReference reference = database.getReference("Users");
-            reference.child(currentUser.getUid()).child("Trips");
-            startActivity(i);
+        if(tripNameET.getText().toString().equals("") || tripDescription.getText().toString().equals("")) {
         }
-        else if(v==saveTripButton){
+        else
+        {
+            if (v == addTripButton) {
+
+                Intent i = new Intent(this, PlanDayActivity.class);
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference reference = database.getReference("Users");
+                reference.child(currentUser.getUid()).child("Trips").push().setValue(new Trip(tripNameET.getText().toString(), tripDescription.getText().toString()));
+                startActivity(i);
+            }
+        }
+       /* else if(v==saveTripButton){
             Intent i = new Intent(this, ThirdPageActivity.class);
             startActivity(i);
-        }
+        }*/
     }
 
     @Override

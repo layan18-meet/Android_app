@@ -42,15 +42,17 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
         final FirebaseDatabase database= FirebaseDatabase.getInstance();
         final DatabaseReference myRef= database.getReference("Users");
 
-        users= new ArrayList<Map>();
+        tripsLV= findViewById(R.id.tripsLV);
+    /*    users= new ArrayList<Map>();
+
         final ArrayAdapter adapter;
         adapter= new ArrayAdapter(this, android.R.layout.simple_list_item_1,users);
         tripsLV.setAdapter(adapter);
-
-        tripsLV= (ListView) findViewById(R.id.tripsLV);
+*/
+        //      tripsLV= (ListView) findViewById(R.id.tripsLV);
         tripListTV= (TextView) findViewById(R.id.tripListTV);
 
-//        trips= new ArrayList<>();
+        trips= new ArrayList<>();
 //
 //
 //        trips.add(new Trip("my fav trip", 1, "was amazing", 3));
@@ -58,9 +60,10 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
 //
 //        trips.get(0).setCountries();
 
-        tripsLV.setOnItemClickListener(this);
+
         tripAdapter= new CustomAdapter2(this, R.layout.custom_row2, trips);
         tripsLV.setAdapter(tripAdapter);
+        tripsLV.setOnItemClickListener(this);
 
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
@@ -70,11 +73,14 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
 
                 String description= map.get("description");
                 String name= map.get("name");
-                String tripId= map.get("tripId");
+             //   String tripId= map.get("tripId");
+
                 String countries=map.get("countries");
-                String days= map.get("days");
-                String pin= map.get("pin");
+//                String days= map.get("days");
+                int pin= Integer.parseInt(map.get("pin"));
                 String TripDay=map.get("TripDay");
+
+                trips.add(new Trip(name, description ));
 
             }
 
@@ -117,5 +123,5 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
         //if (selectedItem=="Germany") {
 
     }
-    }
+}
 

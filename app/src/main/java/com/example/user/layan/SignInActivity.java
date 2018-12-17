@@ -74,7 +74,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        signIn("haneen@gmail.com", "AbcDe123");
+        signIn("kkk@gmail.com", "123456789");
         //if (v == login) {
         //  Intent i = new Intent(this, ThirdPageActivity.class);
         // startActivity(i);
@@ -89,7 +89,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i = new Intent(getApplicationContext(), HomeActivity.class);
+                            Intent i = new Intent(getApplicationContext(), ThirdPageActivity.class);
                             startActivity(i);
                             //updateUI(user);
                         } else {

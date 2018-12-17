@@ -82,7 +82,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString());
+      //  createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString());
 
         if ( v==btSignUp ) {
             String getEmail = email.getText().toString();
