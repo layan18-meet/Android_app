@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,7 +28,8 @@ import java.util.Map;
 
 public class PlanTripActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
-    Button addTripButton, saveTripButton;
+    Button saveTripButton;
+    ImageButton addDayToTripIB;
     EditText tripDescription, tripNameET;
     ListView daysLV;
     ArrayList<TripDay> days = new ArrayList<>();
@@ -44,7 +46,7 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
         mAuth = FirebaseAuth.getInstance();
 
 
-        addTripButton= (Button) findViewById(R.id.addTripButton);
+        addDayToTripIB= findViewById(R.id.addDayToTripIB);
         saveTripButton= (Button) findViewById(R.id.saveTripButton);
         tripDescription=(EditText) findViewById(R.id.tripDescription);
         tripNameET= (EditText) findViewById(R.id.tripNameET);
@@ -64,7 +66,7 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
 //        days.add(new TripDay("country", "city", "day4", R.drawable.flag));
 
 
-        addTripButton.setOnClickListener(this);
+        addDayToTripIB.setOnClickListener(this);
         saveTripButton.setOnClickListener(this);
 
 
@@ -123,19 +125,17 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
         }
         else
         {
-            if (v == addTripButton) {
+            if (v == addDayToTripIB) {
 
                 Intent i = new Intent(this, PlanDayActivity.class);
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference reference = database.getReference("Users");
-                reference.child(currentUser.getUid()).child("Trips").push().setValue(new Trip(tripNameET.getText().toString(), tripDescription.getText().toString()));
+
+            }
+
+            else if(v==saveTripButton){
+                Intent i = new Intent(this, ThirdPageActivity.class);
                 startActivity(i);
             }
         }
-       /* else if(v==saveTripButton){
-            Intent i = new Intent(this, ThirdPageActivity.class);
-            startActivity(i);
-        }*/
     }
 
     @Override

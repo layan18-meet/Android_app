@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class TripListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class TripListActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, View.OnClickListener {
 
     ArrayList<Trip> trips;
 
@@ -34,6 +35,8 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
 
     ArrayList<Map> users;
 
+    ImageButton addNewTripIB;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,8 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
         final DatabaseReference myRef= database.getReference("Users");
 
         tripsLV= findViewById(R.id.tripsLV);
+
+        addNewTripIB= findViewById(R.id.addNewTripIB);
     /*    users= new ArrayList<Map>();
 
         final ArrayAdapter adapter;
@@ -64,6 +69,7 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
         tripAdapter= new CustomAdapter2(this, R.layout.custom_row2, trips);
         tripsLV.setAdapter(tripAdapter);
         tripsLV.setOnItemClickListener(this);
+        addNewTripIB.setOnClickListener(this);
 
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
@@ -71,16 +77,20 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
                 Map<String, String> map= (Map<String, String>) dataSnapshot.getValue();
                 Log.v("E_VALUE", "DATA: "+ dataSnapshot.getValue());
 
-                String description= map.get("description");
-                String name= map.get("name");
+                /*String description= map.get("description");*/
+                String description= "WOW";
+                /*String name= map.get("name");*/
+                String name= "LAYAN";
              //   String tripId= map.get("tripId");
 
-                String countries=map.get("countries");
+                /*String countries=map.get("countries");*/
+                String countries="France, London";
 //                String days= map.get("days");
-                int pin= Integer.parseInt(map.get("pin"));
+                /*int pin= Integer.parseInt(map.get("pin"));*/
+                int pin= 0;
                 String TripDay=map.get("TripDay");
 
-                trips.add(new Trip(name, description ));
+                trips.add(new Trip("Trip", "WOW" ));
 
             }
 
@@ -122,6 +132,14 @@ public class TripListActivity extends AppCompatActivity implements AdapterView.O
         //String selectedItem= trips.get(position);
         //if (selectedItem=="Germany") {
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v== addNewTripIB) {
+            Intent i = new Intent(this, PlanTripActivity.class);
+            startActivity(i);
+        }
     }
 }
 

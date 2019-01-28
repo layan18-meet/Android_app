@@ -14,8 +14,17 @@
         android:text="Your Trip List"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2" />
 
+    <ImageButton
+        android:id="@+id/addNewTripIB"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/plusbutton" />
+
     <ListView
         android:id="@+id/tripsLV"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+    </ListView>
+
 </LinearLayout>
