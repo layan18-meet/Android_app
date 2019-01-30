@@ -128,7 +128,7 @@ public class PlanTripActivity extends AppCompatActivity implements View.OnClickL
             if (v == addDayToTripIB) {
 
                 Intent i = new Intent(this, PlanDayActivity.class);
-
+                startActivity(i);
             }
 
             else if(v==saveTripButton){

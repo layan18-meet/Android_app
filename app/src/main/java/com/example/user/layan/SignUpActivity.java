@@ -60,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 // Sign in success, update UI with the signed-in user's information
                 Log.d(TAG, "createUserWithEmail:success");
                 FirebaseUser user = mAuth.getCurrentUser();
-                Intent i = new Intent(SignUpActivity.this, ThirdPageActivity.class);
+                Intent i = new Intent(SignUpActivity.this, TripListActivity.class);
                 startActivity(i);
 
                 //updateUI(user);

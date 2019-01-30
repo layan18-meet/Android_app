@@ -22,7 +22,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth mAuth;
     final String TAG="Firebase";
 
-    EditText password2, username2;
+    EditText password2, email2;
     Button login;
     TextView loginTV;
 
@@ -34,7 +34,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         mAuth = FirebaseAuth.getInstance();
 
         password2 = (EditText) findViewById(R.id.password2);
-        username2 = (EditText) findViewById(R.id.username2);
+        email2 = (EditText) findViewById(R.id.email2);
         login = (Button) findViewById(R.id.login);
         loginTV= (TextView) findViewById(R.id.loginTV);
 
@@ -74,10 +74,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        signIn("kkk@gmail.com", "123456789");
-        //if (v == login) {
-        //  Intent i = new Intent(this, ThirdPageActivity.class);
-        // startActivity(i);
+        if(v==login)
+            signIn(email2.getText().toString(), password2.getText().toString());
     }
 
     public void signIn(String email, String password){
@@ -89,7 +87,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent i = new Intent(getApplicationContext(), ThirdPageActivity.class);
+                            Intent i = new Intent(SignInActivity.this, TripListActivity.class);
                             startActivity(i);
                             //updateUI(user);
                         } else {

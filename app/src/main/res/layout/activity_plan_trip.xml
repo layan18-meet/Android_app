@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/mapbckg"
     tools:context=".PlanTripActivity">
 
 
@@ -24,14 +25,14 @@
 
     <ImageButton
         android:id="@+id/addDayToTripIB"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         app:srcCompat="@drawable/plusbutton" />
 
     <ListView
         android:id="@+id/daysLV"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
     </ListView>
 
